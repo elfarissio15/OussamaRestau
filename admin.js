@@ -291,7 +291,7 @@ document.getElementById('modification-name-form').addEventListener('submit', fun
     }
 
     displayErrorMessage("Valid New Name", 'Modification-name','rgb(35, 255, 35)');
-    userData.fullName = Name ;
+    userData.fullname = Name ;
 
     updateMemberData(userData);
     window.location.href = `admin.html?email=${encodeURIComponent(userData.email)}`;
