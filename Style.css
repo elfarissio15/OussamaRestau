@@ -1,0 +1,1239 @@
+body {
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Use a common sans-serif font */
+    background-color: #EAEAEA;
+    background-image: url(https://i.ibb.co/Z1w6DdC/BG-pattern.png);
+    background-repeat: repeat;
+    background-size: 700px;
+    scroll-behavior: smooth;
+}
+
+.dark-theme {
+    background-color: #40454d; /* Example dark background color */
+    color: #fff; /* Example light text color */
+    .header{
+        background-color: #3c4147;
+    }
+    .footer{
+        background-color: #3c4147;
+    }
+    a{
+        text-decoration: none;
+        color: #fff; /* Link color */
+    }
+    a:hover {
+        color: #4f9855;
+    }
+    .divmax{
+        background-color:transparent;
+    }
+    .div1,.div2,.product-categorie,.product-item,.promotion-item,.product-details,.product-preview,.product-unity,.promotion-grid,.account-menu ,.help-menu,#loginPopup,#signUpPopup,#likedProductsPopup,
+    #faqPopup,#contactPopup ,#logOutPopup,#MessagePopup,#ViewProfilePopup,#cartPopup,#paymentMethodsPopup,#ModifyPopup,#RemovePopup,#AddPopup,#HistoryPopup,#RespondPopup,
+    #VisaPopup,#paypalPopup,#payAfterTakePopup,#forgotPasswordPopup,#searchPopup,#showInfoPopup,#SingleProductPopup,#ConfirmLoginSignupPopup,#paymentHistoryPopup
+    ,#ReclamationsPopup,#inbox-messages,#hidden-content,#hidden-search,.text-content{
+        background-color: #3c4147;
+        border: #EAEAEA solid 1px;
+        color: #fff; /* Link color */
+    }
+    .product-item img,.product-details img,.product-preview img,.product-unity img ,.promotion-grid img {
+        border: 2px solid #EAEAEA;
+    }
+    .closeButton{
+        color: #ffffff;
+    } 
+        /* Style for the command history table */
+    #commandHistoryTable,#SingleComandeTable,.searchResultTable,.commandes-table   {
+        background-color: #333; /* Background color for dark theme */
+        color: #fff; /* Text color for dark theme */
+    }
+    /* Style for table header */
+    th{
+        background-color: #555; /* Header background color for dark theme */
+    }
+    /* Style for alternate rows */
+    tr:nth-child(even){
+        background-color: #444; /* Alternate row background color for dark theme */
+    }
+
+    .reclamations-section,.top-members,.hidden-content,.message-content,
+    .top-products,.ratings-section,.Commandes-section,.product-section,.parametres-section,.members-section,.faq-section,.promotion-section ,.promotion-content{
+        border: 2px solid #EAEAEA ;
+        background-color: #3c4147;
+    }
+    .rating-title,.product-title,
+    .reclamation-title,.member-title,.commandes-title,.parametres-title,.members-title,.faq-title,.promotion-title{
+        border: 2px solid #EAEAEA ;
+        background-color: #333;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Add box shadow */
+    }
+    .reclamation-item,.member-item,.product-Top ,.comment-item{
+        border: 2px solid #EAEAEA ;
+        background-color: #4d5259;
+    }
+    .message-text,.member-name,.product-name,.rating-section,.comment-info{
+        border: 3px dotted #EAEAEA;
+        background-color: #747b83;
+    }
+    .Comment-section{
+        border: 3px dotted #EAEAEA;
+        background-color: #2c3035;
+    }
+    /* Add more styles as needed */
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    background-color: #EAEAEA;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.header-images{
+    width: 30px; /* Adjusted image width */
+    margin-right: 10px;
+}
+.logo h1 {
+    font-size: 1.2rem; /* Relative font size */
+}
+.search-bar {
+    flex: 1;
+    margin: 0 ;
+    text-align: center;
+}
+.search-bar form {
+    display: inline-flex;
+    align-items: center;
+}
+.search-bar input[type="text"] {
+    width: 500px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-bar button{
+    padding: 6px 10px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover{
+    background-color: #0e5fc9;
+}
+.account-menu button.loginButton {
+    background-color: #4caf50;
+    color: white;
+}
+.account-menu button.loginButton:hover {
+    background-color: #2f7031;
+}
+.help-menu{
+    background-color:  #EAEAEA;
+    color: rgb(0, 0, 0);
+    border: #333 solid 1px;
+    border-radius: 5px;
+}
+.account-menu{
+    background-color: #EAEAEA;
+    color: rgb(0, 0, 0);
+    border: #333 solid 1px;
+    border-radius: 5px;
+}
+
+.help-menu button.FAQ{
+    background-color: #249dc9;
+    color: white;
+}
+.help-menu button.Contact,.account-menu button.liked{
+    background-color: #1f8671;
+    color: white;
+}
+.account-menu button.sign-up,.account-menu button.ViewProfile{
+    background-color: #d8cd34;
+    color: white;
+}
+
+.account-menu button.liked-order, .account-menu button.logout{
+    background-color: #c23215;
+    color: white;
+}
+.help-menu button.FAQ:hover{
+    background-color: #206f8c;
+}
+.help-menu button.Contact:hover,.account-menu button.liked:hover{
+    background-color: #2d6157;
+}
+.account-menu button.sign-up:hover,.account-menu button.ViewProfile:hover {
+    background-color: #878230;
+}
+
+.account-menu button.liked-order:hover ,.account-menu button.logout:hover {
+    background-color: #733225;
+}
+.account-menu button,.help-menu button {
+    display: block;
+    border: none;
+    margin: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 70px;
+    height: 25px;
+    font-size: 10px;
+    
+}
+.account-section{
+    display: flex;
+    align-items: center;
+}
+/* Style for search result sections */
+.searchResultSection {
+    margin-bottom: 20px;
+}
+
+/* Style for search result title */
+.searchResultTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+
+.account-section > div {
+    display: flex; /* Ensure both elements are flex */
+    align-items: center; /* Align items vertically */
+    margin-right: 10px;
+    cursor: pointer;
+}
+/* CSS styles for the links */
+a {
+    text-decoration: none;
+    color: #333; /* Link color */
+}
+a:hover {
+    color: #49b954;
+}
+
+.div1 {
+    padding: 30px;
+    background-color: #EAEAEA;
+    border: #333 solid 1px;
+    border-radius: 5px;
+    overflow: hidden; /* Allow vertical scrolling if content overflows */
+    li{
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+}
+.div2{
+    background-color: #EAEAEA;
+    border: #333 solid 1px;
+    border-radius: 5px;
+    position: relative; /* Set parent to relative positioning */
+}
+.radiosdiv{
+   position: absolute;
+   left: 50%; /* Position horizontally at 50% of parent */
+   transform: translate(-50%,-100%);
+}
+#nextButton{
+    left: 95%;
+}
+#prevButton{
+    right: 95%;
+}
+#prevButton,#nextButton{
+    position: absolute;
+    border: transparent;
+    color: #000000;
+    background-color:rgba(255, 255, 255, 0.2);
+    width: 5%;
+    height: 100%;   
+}
+#prevButton:hover,#nextButton:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #090909;
+    
+}
+
+.bar:hover{
+    background: #fff;
+}
+.divmax{
+    display: flex;
+    margin: 2% auto;
+    background-color:transparent;
+    justify-content: center; /* Center horizontally */
+}
+#dishImage {
+    width: 100%; /* Set the width of the image */
+    height: auto; /* Set the height of the image */
+    max-height: 400px; /* Limit the maximum height of the image */
+    max-width: 100%;
+}
+
+.product-grid,.MyCart-grid,.searchResultGrid, .promotion-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Automatically adjust columns */
+    gap: 10px; /* Gap between grid items */
+    padding: 10px; /* Padding around the grid */
+}
+.product-categorie{
+    background-color: #EAEAEA;
+    margin: 20px 40px 25px 40px;
+    padding: 10px;
+    border: #333 solid 1px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; /* Center horizontally */
+}
+.product-item img,.product-unity img,
+.product-details img,.product-preview img ,.promotion-item img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-height: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    position: relative;
+}
+
+.product-item,.product-unity,
+.product-details,.product-preview,.promotion-item {
+    position: relative;
+    text-align: center;
+    border: 2px solid #000;
+    background-color: #EAEAEA;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product-details img:hover,.product-preview img:hover {
+    transform: scale(1.2); /* Zoom in by 10% */
+    transition: transform 0.2s ease; /* Apply a smooth transition effect */
+}
+
+
+.product-item:hover ,.product-unity:hover,.promotion-item:hover{
+    border: 4px solid #19a112; /* Add border */
+}
+
+.product-item button,.product-details button {
+    background-color: #4caf50; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+.add-to-cart-button {
+    right: 10px; /* Position the add to cart button to the right */
+    background-color: #4caf50; /* Green background color */
+    color: white; /* White text color */
+}
+
+.like-button:hover,.like-button.liked:hover ,.add-to-cart-button:hover,.add-to-cart-button.added:hover{
+    background-color: #ce7311; /* Darker green background color on hover */
+}
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1a73e8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Initially hide the button */
+}
+
+.back-to-top:hover{
+    background-color: #0e5fc9;
+}
+
+.like-button {
+    left: 10px; /* Position the like button to the left */
+    background-color: transparent;
+    color: red; /* Heart color */
+    border: none;
+    padding: 10px 15px; /* Adjust padding to match the add to cart button */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.like-button.liked,.add-to-cart-button.added {
+    background-color: #dc4a1e; /* Change background color when liked */
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+/* Styles for the notification container */
+#notificationContainer {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 1000; /* Ensure notifications appear on top of other content */
+    display: flex;
+    flex-direction: column-reverse; /* Stack notifications vertically and reverse the order */
+    align-items: flex-end;
+}
+.notification {
+    background-color: #4caf50; /* Default background color */
+    color: #fff; /* Default text color */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    max-width: auto; /* Adjust as needed */
+}
+
+.titlelogin {
+    display: flex; /* Enable flexbox for horizontal layout */
+  align-items: center; /* Align vertically within the container */
+  margin-bottom: 50px; /* Add some margin below */
+  }
+
+.titlelogin img {
+    width: 100px;
+    margin-right:60px ;
+  }
+
+.titlelogin h1 {
+  margin-top: 20px;
+  font-size: 27px;
+}
+
+.form-group ,.paymentMethod{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+label {
+    display: block;
+  }
+#loginPopup,#signUpPopup,#ViewProfilePopup,#MessagePopup,#VisaPopup,#paypalPopup,#payAfterTakePopup,#forgotPasswordPopup,#ReclamationsPopup,#ModifyPopup,#HistoryPopup,#AddPopup,#RespondPopup{
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="number"]
+     {
+    width: 95%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    }
+}
+
+.buttonlogin,.buttonsignup,.confirmButton,.cancelButton{
+  width: 200px;
+  padding: 10px;
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+.RespondButton,.RejectButton,.ModifyButton,.RemoveButton,.reclamationButton,.AdminButton,.AddButton,
+.ShowAccountButton,.MakeSeenButton ,.HistoryButton,.CommandeButton,.makeInProgressBtn,.dislinkBtn,.sendBtn,.LikeButton,.ShowAdminButton,.MessageButton{
+    width: auto;
+    padding: 10px;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.reclamationButton,.RejectButton,.RemoveButton,.dislinkBtn{
+    background-color: #d22010;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+.HistoryButton{
+    background-color: #d8cd34;
+    color: white;
+}
+.HistoryButton:hover{
+    background-color: #878230;
+}
+.cancelButton {
+    background-color: #e81d1a;
+    margin: 10px;
+}
+#changeNameBtn,#changeEmailBtn,#changePasswordBtn,#checkLastConnectionBtn,#buttonRecovery,#historyBotton{
+    width: 160px;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 3px;
+}
+#changeNameBtn{
+    background-color: #1a73e8;
+}
+#changeEmailBtn,#checkLastConnectionBtn,#buttonRecovery,.MakeSeenButton,.makeInProgressBtn,.LikeButton,.AdminButton,.AddButton,.MessageButton{
+    background-color: #008d15;
+}
+#changePasswordBtn,#historyBotton{
+    background-color: #ff0000;
+}
+.ModifyButton{
+    background-color: #249dc9;
+}
+.ModifyButton:hover{
+    background-color: #206f8c;
+}
+.CommandeButton{
+    background-color: #1f8671;
+}
+.CommandeButton:hover{
+    background-color: #2d6157;
+}
+#changeNameBtn:hover{
+    background-color: #025cd2;
+}
+#changeEmailBtn:hover,.MakeSeenButton:hover,.makeInProgressBtn:hover,.LikeButton:hover,.MessageButton:hover,.AdminButton:hover,.AddButton:hover{
+    background-color: #077317;
+}
+#changePasswordBtn:hover,.RejectButton:hover,.reclamationButton:hover,.RemoveButton:hover,.dislinkBtn:hover{
+    background-color: #bb0d0d;
+}
+.buttonlogin:hover,.buttonsignup:hover,.confirmButton:hover,.RespondButton:hover,.ShowAccountButton:hover ,.sendBtn:hover{
+  background-color: #0e5fc9;
+}
+
+.cancelButton:hover {
+    background-color: #c70501;
+}
+
+/* Popup styles */
+.hidden {
+  display: none;
+}
+
+#loginPopup,#signUpPopup,#likedProductsPopup,#faqPopup,#contactPopup ,#RemovePopup,#AddPopup,
+#cartPopup,#ViewProfilePopup,#logOutPopup,#MessagePopup,#paymentMethodsPopup,#VisaPopup,#ConfirmLoginSignupPopup,#ModifyPopup,#HistoryPopup,#RespondPopup,
+#paypalPopup,#payAfterTakePopup,#forgotPasswordPopup,#searchPopup,#showInfoPopup,#SingleProductPopup,#paymentHistoryPopup,#ReclamationsPopup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #EAEAEA;
+    color: black;
+    border: #333 solid 1px;
+    padding: 35px;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+}
+
+#loginPopup,#signUpPopup,#ViewProfilePopup ,#logOutPopup ,#MessagePopup,#ConfirmLoginSignupPopup,#paymentMethodsPopup,
+#VisaPopup,#paypalPopup,#payAfterTakePopup,#forgotPasswordPopup,#RemovePopup,#AddPopup{
+    width: 515px; /* Adjust width as needed */
+    z-index: 30;
+}
+#likedProductsPopup,#cartPopup,#searchPopup,#showInfoPopup,#paymentHistoryPopup,#ReclamationsPopup,#ModifyPopup,#HistoryPopup ,#RespondPopup{
+    width: 60%;
+    max-height: 80%; /* Adjust max height as needed */
+    overflow: auto; /* Enable vertical scrolling if needed */
+    z-index: 10;
+
+}
+
+#faqPopup,#contactPopup,#SingleProductPopup {
+    width: 600px; /* Adjust width as needed */
+    padding: 20px;
+    z-index: 10;
+}
+#ViewProfilePopup span {
+    padding: 8px 12px; /* Adjust padding for better spacing */
+    border: 2px solid #000; /* Use solid border */
+    border-radius: 6px; /* Slightly increase border radius */
+    font-style: italic;
+    color: #fff; /* White text color */
+    background-color: #108008; /* Green background color */
+    display: inline-block; /* Ensure the span elements are displayed inline */
+    margin-bottom: 10px; /* Add some bottom margin for separation */
+}
+.closeButton {
+    position: absolute; /* Position absolutely within the popup */
+    top: 10px; /* Adjust top position from the edge */
+    right: 10px; /* Adjust right position from the edge */
+    background-color: transparent; /* Remove default background */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Indicate clickable behavior */
+    font-size: 1.5rem; /* Adjust font size for the icon */
+    color: #000000; /* Adjust icon color */
+}
+.returnButton{
+    position: flex; /* Position absolutely within the popup */
+    background-color: transparent; /* Remove default background */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Indicate clickable behavior */
+    font-size: 1.5rem; /* Adjust font size for the icon */
+    color: #000000; /* Adjust icon color */
+}
+.closeButton:hover{
+    color:red;
+}
+.returnButton:hover{
+    color: #199d71;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px); /* Apply blur effect to the overlay */
+    z-index: 9; /* Ensure the overlay is above other content */
+}
+/* Style for the left-hand side containing the questions */
+/* Style for the FAQ section */
+.faq-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.logOut-section,.Profile-section,.modifications-section,.message-section,.message-content{
+    text-align: center;
+}
+.faq-item {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.faq-answer-section {
+    margin-left: 20px;
+    text-align: center;
+}
+
+.faq-answer {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.social-media-img,.PaymentImages{
+    width: 10%;
+    margin: 1%;
+}
+/* Footer */
+.footer {
+    background-color: #EAEAEA;
+    padding: 30px; /* Increased padding */
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer div {
+    flex: 1;
+    margin-right: 10px; /* Increased margin */
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 25px; /* Increased margin */
+}
+
+.footer ul li {
+    font-size: 15px;
+    margin-bottom: 20px; /* Increased margin */
+    list-style-type: none;
+    font-weight: bold;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer a:hover {
+    color: #49b954;
+}
+
+.footer textarea {
+    width: 90%;
+    padding: 15px; /* Increased padding */
+    margin-bottom: 15px; /* Increased margin */
+}
+
+.footer button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px; /* Increased padding */
+    border: none;
+    cursor: pointer;
+}
+
+.rating {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    color: #ddd;
+    font-size: 30px;
+    padding: 5px;
+    float: right;
+}
+
+.rating input:checked ~ label {
+    color: #f8c400;
+}
+
+/* Adjust spacing between Rate Us and Contact Us */
+.footer .rate-us,
+.footer .contact-us {
+    margin-bottom: 40px; /* Increased margin between sections */
+}
+.cart-footer ,.like-footer {
+    margin-bottom: 15px;
+    text-align: center;
+    justify-content: center; /* Center the buttons horizontally */
+}
+
+.buttonlogin{
+    margin: 0px 10px ;
+}
+.buttonlogin,
+.buttonsignup {
+    width: auto; /* Adjust button width */
+    padding: 10px 50px; /* Adjust button padding */
+    font-size: 14px; /* Adjust button font size */
+}
+
+#error-message{
+    animation :slideIn 0.3s ease forwards;
+}
+
+#login-link,#forgot-password-link{
+    
+    text-decoration: none;
+    color:#007bff;
+}
+#login-link:hover ,#forgot-password-link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* CSS to set background images for radio inputs */
+.paymentMethods-section,.commande-history-section {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    margin-bottom: 20px; /* Add margin between payment methods and buttons */
+}
+
+@keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+/* Style for the command history table */
+#commandHistoryTable ,#SingleComandeTable,.searchResultTable{
+    border-collapse: collapse;
+    margin: auto;
+}
+
+#SingleComandeTable,.commandes-table,.members-table,.faq-table,.modify-table,.history-table,.respond-table,.messages-table{
+    border-collapse: collapse;
+    margin: auto;
+    margin-bottom: 20px;
+
+}
+
+/* Style for table header */
+th{
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 14px;
+    text-align: center;
+}
+
+/* Style for table cells */
+td{
+    border: 1px solid #ddd;
+    padding: 0px 15px;
+}
+
+/* Style for alternate rows */
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.paymentMethod {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center the items vertically */
+    margin: 0 10px; /* Add margin between each payment method */
+}
+
+.paymentMethod input[type="radio"] {
+    display: none;
+}
+
+/* payAfterTake image */
+#payAfterTakeSpan {
+    background-image: url("https://i.ibb.co/T0X6qjJ/money-coins-512x418.png");
+}
+
+/* PayPal image */
+#paypalSpan {
+    background-image: url("https://i.ibb.co/474HjVy/paypal.png");
+}
+
+/* VisaCard image */
+#VisaCardSpan {
+    background-image: url("https://i.ibb.co/12hkg6s/Visa-Card.png");
+}
+
+/* Styling for spans */
+.paymentMethod label {
+    position: relative; /* Enable positioning */
+}
+
+.paymentMethod label span {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    width: 100px; /* Adjust width as needed */
+    height: 60px; /* Adjust height as needed */
+    padding: 25px;
+    display: block;
+    text-align: center; /* Center the span text */
+    border: 4px solid black; /* Smooth border with black color */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Add space between the image and text */
+}
+
+/* Position the text just above the border */
+.paymentMethod label span::after {
+    content: attr(data-text); /* Use the data-text attribute content */
+    position: absolute;
+    bottom: -20px; /* Adjust the distance from the border */
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Blue border when radio input is checked */
+.paymentMethod input[type="radio"]:hover + label span {
+    border-color:  #0762c3; /* Ensure higher specificity */
+}
+.paymentMethod input[type="radio"]:checked + label span {
+    border-color:  #23ae0a;
+}
+
+#admin-previw,#current-time-commandes ,#All-products,#admin-parametres,#All-members,#All-promotions{
+    width: 100%;
+    justify-content: space-between;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Automatically adjust columns */
+}
+
+.reclamations-section,.top-members,
+.top-products,.ratings-section,.parametres-section{
+    border: 2px solid #262424 ;
+    border-radius: 4px;
+    background-color: #EAEAEA;
+    width: 100%;
+    margin: 2px;
+    position: relative ;
+    text-align: center;
+    height: 550px; /* Set the desired height for scrolling */
+    overflow: auto; /* Enable scrolling */
+    align-content: center;
+
+}
+.rating-title,.product-title,.promotion-title,
+.reclamation-title,.member-title,.commandes-title,.parametres-title,.members-title,.faq-title{
+    border: 2px solid #524f4f ;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin: 10px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add box shadow */
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+.message-text,.member-name,.product-name,.rating-section,.Commandes-section,.product-section,.members-section,.faq-section ,.message-content,.promotion-section {
+    border: 3px dotted #18171c;
+    margin: 2px;
+    padding: 2px;
+    background-color: #f0f8ff; /* Light blue background */
+    border-radius: 8px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+}
+.reclamation-item,.member-item,.product-Top,.comment-item{
+    background-color: #f0f8ff; /* Light blue background */
+    border: 3px dotted #18171c;
+    border-radius: 8px; /* Rounded corners */
+    margin: 3px;
+}
+.message-info{
+    font-weight: bold;
+}
+.comment-info{
+    font-weight: bold;
+    border: 3px dotted #1f1d1d;
+    border-radius: 5px;
+    margin: 0px 5px;
+    text-align: left;
+}
+.Comment-section{
+    border: 5px dotted #000000;
+    border-radius: 5px;
+    margin: 5px;
+    
+    font-weight: bold;
+}
+
+.Commandes-grid,.members-grid,#products,.faq-content,.history-content,.respond-content,.title-search,.info-grid{
+    text-align: center;
+    overflow: auto; /* Enable scrolling */
+}
+.modification-content,.add-content,.remove-content,.promotion-section{
+    text-align: center;
+}
+strong{
+    color: #35cb92;
+}
+
+#inbox-button {
+    position: fixed;
+    top: 60px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    text-align: center;
+    
+}
+
+#inbox-button .arrow {
+    display: inline-block;
+    margin-right: 5px;
+}
+#inbox-button img {
+    width: 40px;
+}
+
+#Indicator-number {
+    color: white;
+    padding: 3px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 90px;
+    left: 50px;
+}
+
+#inbox-messages {
+    position: fixed;
+    top: 60px; /* Adjust as needed to position below button */
+    width: 30%; /* Adjust as needed */
+    margin: 10px;
+    max-height: 40%;
+    background-color: #EAEAEA;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 30; /* Ensure messages appear above other content */
+    overflow: auto;
+}
+@media only screen and (max-width: 325px) {
+    /* Specify minimum width for the browser */
+    header h1{
+        display: none;
+    }
+}
+
+@media only screen and (min-width:949px){
+    .menu-icon,.search-icon {
+        display: none; /* Hide the menu icon by default */
+    }
+}
+/* Media query for screens with a maximum width of 768 pixels */
+@media only screen and (max-width: 948px) {
+    /* Adjust the width of the search bar */
+    .search-bar {
+        display: none; /* Hide the account section within the header */
+    }
+
+    header .account-section {
+        display: none; /* Hide the account section within the header */
+    }
+    header{
+        height: 50px;
+    }
+    header h1{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+
+    .titlelogin {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .titlelogin img {
+        margin: 0 auto; /* Center the image */
+    }
+    .product-categorie {
+        margin: 10px;
+    }
+
+    .divmax {
+        width: 95%;
+        flex-direction: column-reverse;
+    }
+    
+    #loginPopup,#signUpPopup,#likedProductsPopup,#faqPopup,#contactPopup 
+    ,#RemovePopup,#AddPopup,#cartPopup,#ViewProfilePopup,#logOutPopup,
+    #MessagePopup,#VisaPopup,#ConfirmLoginSignupPopup,
+    #ModifyPopup,#HistoryPopup,#RespondPopup,#paypalPopup,#payAfterTakePopup,
+    #forgotPasswordPopup,#searchPopup,#showInfoPopup,#SingleProductPopup,
+    #paymentHistoryPopup,#ReclamationsPopup {
+       width: 80%;
+       height: auto;
+       overflow: auto;
+    }
+    #signUpPopup{
+        height: 92%;
+    }
+    #inbox-messages{
+        width: 88%;
+    }
+    #paymentMethodsPopup{
+        height: 80%;
+        width: 60%;
+        overflow: auto;
+    }
+    /* Show the menu icon */
+    .menu-icon {
+        position: relative;
+        cursor: pointer;
+        top: -3px;
+        right: 10px;
+        font-size: 25px;
+    }
+    .search-icon {
+        position: absolute;
+        cursor: pointer;
+        top: 7px;
+        left: 50px;
+        font-size: 25px;
+    }
+    .darkmode {
+        position: absolute;
+        right: 45px;
+        top: 13px;
+    }
+    .account-section{
+        display:block;
+        margin: auto;
+        width: 90%;
+        
+    }
+    button[type="button"] {
+        width: 100%;
+    }
+    footer{
+        flex-direction: column-reverse;
+        text-align: center;
+        margin: 0px;
+    }
+    footer > div {
+        padding: 0px;
+    }
+    .paymentMethods-section {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+
+    }
+    .paymentMethod{
+        margin: 15px auto;
+    }
+    #VisaPopup,#paypalPopup{
+        height: 80%;
+    }
+    /* Style for the command history table and other tables */
+    #commandHistoryTable,
+    #SingleComandeTable,
+    .searchResultTable,
+    .commandes-table,
+    .members-table,
+    .faq-table,
+    .modify-table,
+    .history-table,
+    .respond-table,
+    .messages-table {
+        border-collapse: collapse;
+        margin: 0 auto; /* Center the table horizontally */
+        width: 100%; /* Make the table span the full width of its container */
+    }
+    .inputReponse{
+        margin-top: 10px;
+    }
+    
+}
+
+#hidden-content{
+    position: fixed;
+    top: 0px;
+    right: 0;
+    width: 50%;
+    height: 95%;
+    margin: auto;
+    background-color: #EAEAEA;
+    color: black;
+    border: #333 solid 1px;
+    padding: 35px;
+    border-radius: 5px;
+    z-index: 31;
+    text-align: center;
+}
+#hidden-search {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    height: 5%;
+    background-color: #EAEAEA;
+    color: black;
+    border: #333 solid 1px;
+    border-radius: 5px;
+    z-index: 30;
+    text-align: center;
+    input{width: 80%;
+    padding: 4px;
+    border-radius: 5px;
+}
+    button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin-top: 3px;
+    border-radius: 5px;
+}
+
+}
+#hidden-content ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 10%;
+}
+
+/* Styling for each list item */
+#hidden-content li {
+    margin-bottom: 10px; /* Adjust spacing between list items */
+}
+
+.description {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    font-weight: bold;
+    background-color:rgba(0,0,0,0.3); /* Semi-transparent background */
+    color: #ffffff; /* Text color */
+    padding: 5px 10px; /* Padding around the text */
+    font-size: 15px; /* Font size */
+    margin: 15px 0;
+}
+.divjoin{
+    position: relative;
+    text-align: center;
+}
+.divjoin video{
+    width: 100%;
+    height: auto;
+}
+#videoPlayer {
+    transition: opacity 0.5s ease-in-out; /* Adjust the transition properties as needed */
+}
+
+.fade-out {
+    opacity: 0;
+}
+.radio-buttons {
+    position: absolute;
+    bottom: 10px; /* Adjust the distance from the bottom as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex; /* Use flexbox to align items horizontally */
+    z-index: 20;
+}
+
+.radio-buttons input[type="radio"] {
+    margin: 0 5px; /* Adjust the spacing between radio buttons */
+}
+.JoinButton{
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    padding:  10px 20px;
+    color: white;
+}
+.text-content{
+    background-color:#EAEAEA ;
+    text-align: center;
+    padding: 30px;
+    margin: 5px 3px;
+}
+.text-title{
+    font-weight: bold;
+    font-size: 20px;
+    font-family:  'Trebuchet MS', sans-serif;
+}
+.text-parole{
+    margin: 10px;
+}

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restaurant</title>
+        <link rel="icon" href="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="Style.css"/>
+    </head>
+    <body>
+        <div>
+            <header class="header">
+                <div class="logo">
+                    <img class="header-images"  src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                    <h1><a href="Home.html">Restaurant Name</a></h1>
+                </div>
+                <div class="search-bar">
+                    <form id="search-form">
+                        <input type="text" id="search-String" placeholder="Search Products By Name / Description / Categorie..." autocomplete="on" required>
+                        <button type="submit" class="searsh-product">Search</button>
+                    </form>
+                </div>
+                <div class="account-section" id="accountSection">
+                </div>
+                <div class="darkmode">
+                    🌙<input type="checkbox" onclick="toggleThemeDark()" >
+                </div>
+                <div class="search-icon" onclick="toggleSearch()">
+                    <!-- Search icon content goes here -->
+                    &#128269; <!-- Unicode character for magnifying glass -->
+                </div>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <!-- Menu icon content goes here -->
+                    &#9776; <!-- Unicode character for three horizontal lines -->
+                </div>
+            </header>
+            <div>
+                <div class="divmax">
+                    <div class="div1" id="categories">
+                        <!-- Categories will be dynamically added here -->
+                    </div>
+                    <div class="div2" id="div2">
+                        <!-- Content for dishes goes here -->
+                        <img id="dishImage" alt="Dish Image">
+                        <div class="radiosdiv"></div>
+                        <button id="prevButton">◀</button>
+                        <button id="nextButton">▶</button>
+                    </div>
+                </div>
+                <div class="products" id="products">
+                    <!-- Product grids will be dynamically added here -->
+                </div>
+            </div>
+            <footer class="footer">
+                <div>
+                    <!-- About Us -->
+                    <h3>About Us</h3>
+                    <p>Welcome to Restaurant Name! We pride ourselves on offering a diverse menu of delicious dishes crafted with locally sourced ingredients. Our cozy atmosphere and attentive staff ensure a memorable dining experience for every guest.</p>
+                    <div>
+                        <!-- Copyright -->
+                        <p>&copy; 2024 <a style="text-decoration: underline ;font-style: italic;color: green;" >Restaurant Name</a>. All rights reserved.</p>
+                    </div>
+                </div>
+            
+                <div>
+                    <!-- Contact Us -->
+                    <h3>Contact Us</h3>
+                    <form id="contactForm">
+                        <!-- Hidden input to store rating value -->
+                        <input type="hidden" id="ratingInput" name="rating">
+                        <textarea id="messageInput" placeholder="Send us a message"></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+                
+                <div>
+                    <!-- Rate Us -->
+                    <h3>Rate Us</h3>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">&#9733;</label>
+                    </div>
+                </div>
+            </footer>
+            <div id="backToTopBtn" class="back-to-top" onclick="scrollToTop()">
+                Back to Top
+            </div>
+            <div id="ViewProfilePopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - View Profile</h1>
+                    </div>
+                    <div class="Profile-section">
+                        <p>Full Name: <span id="fullName"></span></p>
+                        <p>Email: <span id="email"></span></p>
+                        <!-- Add more fields here for displaying other user information -->
+            
+                        <!-- Buttons for modification -->
+                        <button id="changeNameBtn" onclick="showChangeNameSection()">Change Name</button>
+                        <button id="changeEmailBtn" onclick="showChangeEmailSection()">Change Email</button>
+                        <button id="changePasswordBtn" onclick="showChangePasswordSection()">Change Password</button>
+                    </div>
+                    <div class="modifications-section" >
+                        <div class="modificationName">
+                            <form id="modification-name-form">
+                                <p>New Name : </p>
+                                <input type="text" id="New-name" placeholder="New Name"  name="FullName" autocomplete="on" >
+                                <button type="submit" class="confirmButton" >Confirm</button>
+                                <button class="cancelButton" onclick="showProfileDataSection()">Cancel</button>
+                            </form>
+                        </div>
+                        <div class="modificationEmail">
+                            <form id="modification-email-form">
+                                <p>New Email : </p>
+                                <input type="email" id="New-email" placeholder="New Email" name="email" autocomplete="on" >
+                                <button type="submit" class="confirmButton" >Confirm</button>
+                                <button class="cancelButton" onclick="showProfileDataSection()">Cancel</button>
+                            </form>
+                        </div>
+                        <div class="modificationPassword">
+                            <form id="modification-password-form">
+                                <p>Existing Password: </p>
+                                <input type="password"  id="exist-password" placeholder="Password" name="Existingpassword" autocomplete="on" >
+                                <p>New Password : </p>
+                                <input type="password"  id="New-password" placeholder="New Password" name="Newpassword" autocomplete="on" >
+                                <p>Confirm New Password : </p>
+                                <input type="password"  id="Confirm-New-password" placeholder="Confirm New Password"  name="ConfirmNewpassword" autocomplete="on" >
+                                <button type="submit" class="confirmButton" >Confirm</button>
+                                <button class="cancelButton" onclick="showProfileDataSection()">Cancel</button>
+                            </form>
+                        </div>
+                        <!-- Input and other elements for modifications will be added here -->
+                    </div>
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="likedProductsPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - Liked Products</h1>
+                    </div>
+                    <div id="likedProductsGrid" class="product-grid">
+                        <!-- Liked products will be dynamically added here -->
+                    </div>
+                    <div class="like-footer">
+                        <button id="loginButton" class="buttonlogin" onclick="toggleLikedProductsPopup(),toggleCartPopup()">View Cart</button>
+                    </div>
+                    <!-- Close button for the liked products popup -->
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="logOutPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - Log Out</h1>
+                    </div>
+                    <div class="logOut-section">
+                        <p>Are you sure you want to log out?</p>
+                        <button class="confirmButton" onclick="confirmLogout()">Confirm</button>
+                        <button class="cancelButton" onclick="togglelogOutPopup()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div id="faqPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - FAQ</h1>
+                    </div>
+                    <div class="faq-section">
+                        <!-- FAQ content goes here -->
+                    </div>
+                    <div class="faq-answer-section">
+                        <!-- Answers will be displayed here -->
+                        <button class="returnButton">◀</button>
+                        <div class="faq-answer"></div>
+                    </div>
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="contactPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - Contact</h1>
+                    </div>
+                    <div class="contact-section" style='text-align:center'>
+                        <!-- Contact form or information goes here -->
+                        <h3>Contact Us</h3>
+                        <h5>Address: [My Addresse Entreprise]</h5>
+                        <h5>Phone: [0771477013]</h5>
+                        <h5>Email: [oussamaelfarissi2005@gmail.com]</h5>
+                        <h3>Follow Us</h3>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="https://i.ibb.co/gVR9pmy/facebook-512x512.webp" alt="Facebook" class="social-media-img">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="https://i.ibb.co/VDcRZJp/linkedin-512x512.png" alt="Twitter" class="social-media-img">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="https://i.ibb.co/vDmPrK3/instagram-512x512.png" alt="Instagram" class="social-media-img">
+                        </a>
+                        <a href="https://github.com/elfarissio15" target="_blank">
+                            <img src="https://i.ibb.co/r2k71Qx/github-512x512.png" alt="Email" class="social-media-img">
+                        </a>
+                        <a href="https://www.discord.com" target="_blank">
+                            <img src="https://i.ibb.co/KzVSN7R/discord-512x512.png" alt="discord" class="social-media-img">
+                        </a>
+                    </div>
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="cartPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - My Cart</h1>
+                    </div>
+                    <div id="MyCartGrid" class="MyCart-grid">
+                        <!-- Liked products will be dynamically added here -->
+                    </div>
+                    <!-- New div for displaying cart price and buttons -->
+                    <div class="cart-footer">
+                        <div class="form-group">
+                            <p>Cart Total: <span id="cartTotal"></span>Dhs</p> <!-- Replace $100 with actual cart total -->
+                            <button id="signupButton" class="buttonsignup" onclick="VerifyBeforeBuy()">Buy</button>
+                            <button id="historyBotton" class="buttonhistory" onclick="VerifyAllBuys()">History</button>
+                        </div>
+                        <div class="form-group">
+                            
+                        </div>
+                    </div>
+                    <!-- Close button for My cart popup -->
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="paymentMethodsPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Select a Payment method</h1>
+                    </div>
+                    <div class="paymentMethods-section">
+                        <div class="paymentMethod">
+                            <input type="radio" id="payAfterTake" name="paymentMethod" value="Pay After Take" required>
+                            <label for="payAfterTake"><span id="payAfterTakeSpan" data-text="Pay After Take"></span></label>
+                        </div>
+                        <div class="paymentMethod">
+                            <input type="radio" id="paypal" name="paymentMethod" value="paypal" required>
+                            <label for="paypal"><span id="paypalSpan" data-text="PayPal"></span></label>
+                        </div>
+                        <div class="paymentMethod">
+                            <input type="radio" id="VisaCard" name="paymentMethod" value="Visa" required>
+                            <label for="VisaCard"><span id="VisaCardSpan" data-text="Visa Card"></span></label>
+                        </div>
+                    </div>
+                    <div class="cart-footer">
+                        <button class="confirmButton" >Confirm</button>
+                        <button class="cancelButton" onclick="togglePayingMethodPopup()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div id="paymentHistoryPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Payment History</h1>
+                    </div>
+                    <div class="commande-history-section">
+                        <div id="commandHistoryTable">
+                        
+                        </div>
+                    </div>
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="ReclamationsPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Reclamation</h1>
+                    </div>
+                    <div class="commande-history-section">
+                        <div id="SingleComandeTable">
+                        </div>
+                    </div>
+                    
+                    <div class="Reclamation-input">
+                        <form id="Reclamation-form">
+                            <div class="form-group">
+                                <label for="Reclamation">Reclamation:</label>
+                                <input type="text" id="Reclamation" name="Reclamation" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="confirmButton">Confirm</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <!-- pay After Take Payment Popup -->
+            <div id="payAfterTakePopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/T0X6qjJ/money-coins-512x418.png" alt="Restaurant Logo">
+                        <h2>Pay After Take Details</h2>
+                    </div>
+                    <form id="pat-form">
+                        <div class="form-group">
+                            <label for="addressPAT">Address:</label>
+                            <input type="text" id="addressPAT" name="addressPAT" autocomplete="street-address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumberPAT">Phone Number:</label>
+                            <input type="number" id="phoneNumberPAT" name="phoneNumberPAT" autocomplete="tel" required>
+                        </div>          
+                        <div class="cart-footer">
+                            <div class="buttons-container">
+                                <button type="submit" class="confirmButton">Confirm</button>
+                                <button class="cancelButton" onclick="togglepayAfterTakePopup()">Cancel</button>
+                            </div>
+                        </div>
+                        <button class="closeButton">❌</button>
+                    </form>
+                    
+                </div>
+            </div>
+            <!-- PayPal Payment Popup -->
+            <div id="paypalPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/474HjVy/paypal.png" alt="paypal Logo">
+                        <h2>PayPal Payment Details</h2>
+                    </div>
+                    <form id="paypal-form">
+                        <div class="form-group">
+                            <label for="paypalEmail">PayPal Email Address:</label>
+                            <input type="email" id="paypalEmail" name="paypalEmail" autocomplete="email" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="paypalPassword">Password:</label>
+                            <input type="password" id="paypalPassword" name="paypalPassword" autocomplete="current-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addressPayPal">Address:</label>
+                            <input type="text" id="addressPayPal" name="addressPayPal" autocomplete="street-address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumberPaypal">Phone Number:</label>
+                            <input type="number" id="phoneNumberPaypal" name="phoneNumberPaypal" autocomplete="tel" required>
+                        </div>
+                        <button class="closeButton">❌</button>
+                        <div class="cart-footer">
+                            <div class="buttons-container">
+                                <button type="submit" class="confirmButton" >Confirm</button>
+                                <button class="cancelButton" onclick="togglePayPalPopup()">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <div id="inbox-button" onclick="toggleMessages()">
+                <span class="arrow"><img src="https://i.ibb.co/y0rRM1J/message-512x512.png"></span> <!-- Down arrow -->
+            </div>
+            <span id="Indicator-number"></span>
+            
+            <div id="inbox-messages" class="hidden">
+                <div class="titlelogin">
+                    <h1>Messages Received</h1>
+                </div>
+                <div class="message-content">
+
+                </div>
+                <button class="closeButton">❌</button>
+                <!-- Messages from admin will be displayed here -->
+            </div>
+            <!-- Visa Payment Popup -->
+            <div id="VisaPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/12hkg6s/Visa-Card.png" alt="Visa-Card Logo">
+                        <h2>Visa Payment Details</h2>
+                    </div>
+                    <form id="Visa-popup"> 
+                        <div class="form-group">
+                            <label for="cardholderNameVisa">Cardholder Name:</label>
+                            <input type="text" id="cardholderNameVisa" name="cardholderNameVisa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardNumberVisa">Card Number:</label>
+                            <input type="number" id="cardNumberVisa" name="cardNumberVisa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expirationDateVisa">Expiration Date:</label>
+                            <input type="date" id="expirationDateVisa" name="expirationDateVisa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvvVisa">CVV/CVC Code:</label>
+                            <input type="number" id="cvvVisa" name="cvvVisa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addressVisa">Address:</label>
+                            <input type="text" id="addressVisa" name="addressVisa" autocomplete="street-address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumberVisa">Phone Number:</label>
+                            <input type="number" id="phoneNumberVisa" name="phoneNumberVisa" autocomplete="tel" required>
+                        </div>
+                        <!-- Close button for My cart popup -->
+                        <button class="closeButton">❌</button>
+                        <div class="cart-footer">
+                            <div class="buttons-container">
+                                <button type="submit" class="confirmButton" >Confirm</button>
+                                <button class="cancelButton" onclick="toggleVisaPopup()">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <div id="notificationContainer"></div>
+            <div  id="searchPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - Searched Results</h1>
+                    </div>
+                    <div id="SearshedProductsGrid" class="product-grid">
+                        <!-- Searshed products will be dynamically added here -->
+                    </div>
+                    <!-- Close button for the liked products popup -->
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div  id="SingleProductPopup" class="hidden">
+                <div class="container">
+                    <div class="Product-Section">
+                        
+                    </div>
+                    <!-- Close button for the liked products popup -->
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <!-- Container for hidden content -->
+            <div id="hidden-content" class="hidden">
+                
+            </div>
+            <div id="hidden-search" class="hidden">
+                <form id="hidden-search-form">
+                    <input type="text" id="hidden-search-String" placeholder="Search Products By Name / Description / Categorie..." autocomplete="on" required>
+                    <button type="submit" class="searsh-product">Search</button>
+                </form>
+            </div>
+        </div>
+        <script src="member.js"></script>
+    </body>
+</html>

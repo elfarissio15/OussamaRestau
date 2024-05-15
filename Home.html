@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restaurant</title>
+        <link rel="icon" href="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="Style.css"/>
+    </head>
+    <body>
+        <div>
+            <header class="header">
+                <div class="logo">
+                    <img class="header-images"  src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                    <h1><a href="Home.html">Restaurant Name</a></h1>
+                </div>
+                <div class="search-bar">
+                    <form id="search-form">
+                        <input type="text" id="search-String" placeholder="Search Products By Name / Description / Categorie..." autocomplete="on" required>
+                        <button type="submit" class="searsh-product">Search</button>
+                    </form>
+                </div>
+                <div class="account-section">
+                    <div class="account" onclick="toggleAccountMenu()">👤<h6><a>My Account</a></h6></div>
+                    <div class="account-menu" id="accountMenu">
+                        <button type="button" class="loginButton" onclick="toggleLoginPopup()">Login</button>
+                        <button type="button"class="sign-up" onclick="toggleSignUpPopup()">Sign up</button>
+                        <button type="button" class="liked-order" onclick="toggleLikedProductsPopup()">Liked Products</button>
+                        <!-- <button onclick="logout()">Logout</button>
+                        <button onclick="viewProfile()">View Profile</button> -->
+                    </div>
+                    <div class="help" onclick="toggleHelpMenu()">ℹ️<h6><a>Help</a></h6></div>
+                    <div class="help-menu" id="helpMenu">
+                        <button type="button" class="FAQ" onclick="toggleFAQPopup()">FAQ</button>
+                        <button type="button" class="Contact" onclick="toggleContactPopup()">Contact</button>
+                        <!-- Add more help options if needed -->
+                    </div>
+                    <div class="cart" onclick="toggleCartPopup()">🏬<h6><a>My Cart</a></h6></div>
+                </div>
+                <div class="darkmode">
+                    🌙<input type="checkbox" onclick="toggleThemeDark()" >
+                </div>
+                <div class="search-icon" onclick="toggleSearch()">
+                    <!-- Search icon content goes here -->
+                    &#128269; <!-- Unicode character for magnifying glass -->
+                </div>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <!-- Menu icon content goes here -->
+                    &#9776; <!-- Unicode character for three horizontal lines -->
+                </div>
+
+            </header>
+            <div>
+                <div class="divmax">
+                    <div class="div1" id="categories">
+                        <!-- Categories will be dynamically added here -->
+                    </div>
+                    <div class="div2" id="div2">
+                        <!-- Content for dishes goes here -->
+                        <img id="dishImage" alt="Dish Image">
+                        <div class="radiosdiv"></div>
+                        <button id="prevButton">◀</button>
+                        <button id="nextButton">▶</button>
+                    </div>
+                </div>
+                <div class="products" id="products">
+                    <!-- Product grids will be dynamically added here -->
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="about">
+                    <!-- About Us -->
+                    <h3>About Us</h3>
+                    <p>Welcome to Restaurant Name! We pride ourselves on offering a diverse menu of delicious dishes crafted with locally sourced ingredients. Our cozy atmosphere and attentive staff ensure a memorable dining experience for every guest.</p>
+                    <div>
+                        <!-- Copyright -->
+                        <p>&copy; 2024 <a style="text-decoration: underline ;font-style: italic;color: green;" >Restaurant Name</a>. All rights reserved.</p>
+                    </div>
+                </div>
+            
+                <div>
+                    <!-- Contact Us -->
+                    <h3>Contact Us</h3>
+                    <form id="contactForm">
+                        <!-- Hidden input to store rating value -->
+                        <input type="hidden" id="ratingInput" name="rating">
+                        <textarea id="messageInput" placeholder="Send us a message"></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+                
+                <div>
+                    <!-- Rate Us -->
+                    <h3>Rate Us</h3>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">&#9733;</label>
+                    </div>
+                </div>
+            </footer>
+            <div id="backToTopBtn" class="back-to-top" onclick="scrollToTop()">
+                Back to Top
+            </div>
+            <div id="loginPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name</h1>
+                    </div>
+                    <div class="login-section">
+                        <h2>Login</h2>
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="login-email">Email:</label>
+                                <input type="email" id="login-email" name="email" autocomplete="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password:</label>
+                                <input type="password" id="login-password" name="password" autocomplete="current-password" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="buttonlogin">Login</button>
+                            </div>
+                            <button class="closeButton">❌</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Forgot Password Popup -->
+            <div id="forgotPasswordPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h2>Forgot Password</h2>
+                    </div>
+                    <div id="lastConnectionPrompt" class="form-group">
+                        <form>
+                            <p>Please provide the last time you connected:</p>
+                            <input type="date" id="date" placeholder="date" required>
+                            <button id="checkLastConnectionBtn">Check Last Connection</button>
+                        </form>
+                    </div>
+                    <div id="setNewPasswordPrompt" class="form-group hidden">
+                        <form>
+                            <div class="form-group">
+                                <label for="signup-password">Set A New Password:</label>
+                                <input type="password" id="Forgot-password" name="password" autocomplete="current-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-confirm-password">Confirm New Password:</label>
+                                <input type="password" id="Forgot-confirm-password" name="confirm-password" autocomplete="current-password" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="buttonRecovery">Update Password</button>
+                            </div>
+                        </form>
+                        <!-- Add input fields for setting a new password -->
+                    </div>
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="signUpPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name</h1>
+                    </div>
+                    <div class="signup-section">
+                        <h2>Create an Account</h2>
+                        <form id="signup-form" method="post">
+                            <div class="form-group">
+                                <label for="signup-fullname">Full Name:</label>
+                                <input type="text" id="signup-fullname" name="fullname"  autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-email">Email:</label>
+                                <input type="email" id="signup-email" name="email" autocomplete="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-password">Password:</label>
+                                <input type="password" id="signup-password" name="password" autocomplete="current-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-confirm-password">Confirm Password:</label>
+                                <input type="password" id="signup-confirm-password" name="confirm-password" autocomplete="current-password" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="buttonsignup">Sign Up</button>
+                            </div>
+                            <button class="closeButton">❌</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="likedProductsPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - Liked Products</h1>
+                    </div>
+                    <div id="likedProductsGrid" class="product-grid">
+                        <!-- Liked products will be dynamically added here -->
+                    </div>
+                    <div class="like-footer">
+                        <button id="loginButton" class="buttonlogin" onclick="toggleLikedProductsPopup(),toggleLoginPopup()">Login</button>
+                        <button id="signupButton" class="buttonsignup" onclick="toggleLikedProductsPopup(),toggleSignUpPopup()">Sign Up</button>
+                    </div>
+                    <!-- Close button for the liked products popup -->
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="faqPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - FAQ</h1>
+                    </div>
+                    <div class="faq-section">
+                        <!-- FAQ content goes here -->
+                    </div>
+                    <div class="faq-answer-section">
+                        <!-- Answers will be displayed here -->
+                        <button class="returnButton">◀</button>
+                        <div class="faq-answer"></div>
+                    </div>
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="contactPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - Contact</h1>
+                    </div>
+                    <div class="contact-section" style='text-align:center'>
+                        <!-- Contact form or information goes here -->
+                        <h3>Contact Us</h3>
+                        <h5>Address: [My Addresse Entreprise]</h5>
+                        <h5>Phone: [0771477013]</h5>
+                        <h5>Email: [oussamaelfarissi2005@gmail.com]</h5>
+                        <h3>Follow Us</h3>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="https://i.ibb.co/gVR9pmy/facebook-512x512.webp" alt="Facebook" class="social-media-img">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="https://i.ibb.co/VDcRZJp/linkedin-512x512.png" alt="Twitter" class="social-media-img">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="https://i.ibb.co/vDmPrK3/instagram-512x512.png" alt="Instagram" class="social-media-img">
+                        </a>
+                        <a href="https://github.com/elfarissio15" target="_blank">
+                            <img src="https://i.ibb.co/r2k71Qx/github-512x512.png" alt="Email" class="social-media-img">
+                        </a>
+                        <a href="https://www.discord.com" target="_blank">
+                            <img src="https://i.ibb.co/KzVSN7R/discord-512x512.png" alt="discord" class="social-media-img">
+                        </a>
+                    </div>
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="cartPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - My Cart</h1>
+                    </div>
+                    <div id="MyCartGrid" class="MyCart-grid">
+                        <!-- Liked products will be dynamically added here -->
+                    </div>
+                    <!-- New div for displaying cart price and buttons -->
+                    <div class="cart-footer">
+                        <p>Cart Total: <span id="cartTotal"></span>Dhs</p> <!-- Replace $100 with actual cart total -->
+                        <button id="loginButton" class="buttonlogin" onclick="toggleCartPopup(),toggleLoginPopup()">Login</button>
+                        <button id="signupButton" class="buttonsignup" onclick="toggleCartPopup(),toggleSignUpPopup()">Sign Up</button>
+                    </div>
+                    <!-- Close button for My cart popup -->
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div id="notificationContainer"></div>
+            <div id="ConfirmLoginSignupPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - Reclamation</h1>
+                    </div>
+                    <div class="logOut-section">
+                        <p>To submit the message, you need to log in or sign up. Do you want to proceed?</p>
+                        <button class="buttonlogin" onclick="toggleConfirmLoginSignupPopup(),toggleLoginPopup()">Login</button>
+                        <button class="buttonsignup" onclick="toggleConfirmLoginSignupPopup(),toggleSignUpPopup()">Sign up</button>
+                        <button class="cancelButton" onclick="toggleConfirmLoginSignupPopup()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div  id="searchPopup" class="hidden">
+                <div class="container">
+                    <div class="titlelogin">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Restaurant Logo">
+                        <h1>Restaurant Name - Searched Results</h1>
+                    </div>
+                    <div id="SearshedProductsGrid" class="product-grid">
+                        <!-- Searshed products will be dynamically added here -->
+                    </div>
+                    <!-- Close button for the liked products popup -->
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <div  id="SingleProductPopup" class="hidden">
+                <div class="container">
+                    <div class="Product-Section">
+                        
+                    </div>
+                    <!-- Close button for the liked products popup -->
+                    <button class="closeButton">❌</button>
+                </div>
+            </div>
+            <!-- Container for hidden content -->
+            <div id="hidden-content" class="hidden">
+                <ul>
+                    <li class="account-item">
+                        👤 My Account
+                        <button type="button" class="LikeButton" onclick="toggleLoginPopup()">Login</button>
+                        <button type="button"class="RespondButton" onclick="toggleSignUpPopup()">Sign up</button>
+                        <button type="button" class="RejectButton" onclick="toggleLikedProductsPopup()">Liked Products</button>
+                    </li>
+                    <li class="help-item">
+                        ℹ️ Help
+                        <button type="button" class="ModifyButton" onclick="toggleFAQPopup()">FAQ</button>
+                        <button type="button" class="CommandeButton" onclick="toggleContactPopup()">Contact</button>
+                    </li>
+                    <li class="cart-item">
+                        🏬 Shopping
+                        <button type="button" class="HistoryButton" onclick="toggleCartPopup()">My Cart</button>
+                    </li>
+                </ul>
+                <button class="closeButton">❌</button>
+            </div>
+            <div id="hidden-search" class="hidden">
+                <form id="hidden-search-form">
+                    <input type="text" id="hidden-search-String" placeholder="Search Products By Name / Description / Categorie..." autocomplete="on" required>
+                    <button type="submit" class="searsh-product">Search</button>
+                </form>
+            </div>
+        </div>
+        <script src="Anounyme.js"></script>
+    </body>
+</html>
