@@ -1034,7 +1034,7 @@ function confirmLogout() {
     // Redirect to home.html
     userData.lastConnection =  getCurrentTime();
     updateMemberData(userData);
-    window.location.href = "home.html";
+    window.location.href = "Home.html";
 }
 // Function to handle window unload event
 window.addEventListener('beforeunload', function(event) {
