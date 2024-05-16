@@ -12,10 +12,8 @@ window.onload = function () {
     darkModeCheckbox.checked = true;
 };
 const videos = [
-    "https://www.youtube.com/embed/NE6nkr_qlus",
-    "videos/videoPure2.mp4",
-    "videos/videoTrimPure.webm",
-    "videos/videoTrimPure2.webm"
+    "videoPure2.mp4",
+    "videoTrimPure2.webm"
 ];
 let currentVideoIndex = 0;
 
